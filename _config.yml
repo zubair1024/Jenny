@@ -1,0 +1,53 @@
+# Build settings
+permalink   : /blog/:year/:title/
+markdown    : kramdown
+gems: [jekyll-paginate]
+
+paginate: 10
+paginate_path: "/blog/page/:num/"
+comments: true
+
+source: source
+destination: _site
+sass:
+  sass_dir: _scss
+  style: compressed # expanded
+
+# SEO settings
+title: grizzlybyte
+description: "A blog by Zubair Ahmed"
+keywords: "zubair1024, tech, javascript, development, programming, blog, web"
+url: http://github.com/zubair1024
+baseurl: ""
+# baseurl: ""
+
+# google_analytics: UA-52446115-1
+repo: http://github.com/zubair1024
+disqus_shortname: "zubair1024"
+disqus_site_shortname: "zubair1024"
+
+# Author settings
+author:
+  name      : Zubair Ahmed
+  job       : Software Engineer
+  bio       : "PROGRAMMER. TECHIE. STRATEGIST. AUTHOR. INTELLECTUALIST."
+  thumb     : https://avatars2.githubusercontent.com/u/3193073?v=3&s=460
+  email     : zubair1024@gmail.com
+  url       : http://nandomoreira.me
+  github    : http://github.com/zubair1024
+  twitter   : http://twitter.com/zubair1024
+  facebook  : http://facebook.com/zoobair
+  linkedin  : http://linkedin.com/in/zubair1024
+
+# navbar pages
+navbar:
+  #- slug: about
+  # title: About
+  # - slug: resume
+  #   title: Resume
+  # - slug: skills
+  #   title: Skills
+  - slug: blog
+    title: Blog
+
+exclude: ["gulp", "node_modules", "bower", "bower_components", "config.rb", "src", "Gemfile", "Gemfile.lock", ".rvmrc", ".rbenv-version", "package.json", "gulpfile.js", "README.md", "Rakefile", "changelog.md"]
