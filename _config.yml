@@ -14,7 +14,7 @@ sass:
   style: compressed # expanded
 
 # SEO settings
-title: grizzlybyte
+title: Grizzlybit
 description: "A blog by Zubair Ahmed"
 keywords: "zubair1024, tech, javascript, development, programming, blog, web"
 url: http://github.com/zubair1024
@@ -30,7 +30,7 @@ disqus_site_shortname: "zubair1024"
 author:
   name      : Zubair Ahmed
   job       : Software Engineer
-  bio       : "PROGRAMMER. TECHIE. STRATEGIST. AUTHOR. INTELLECTUALIST."
+  bio       : "Programmer. Inetellectualist. Passionate about design and development. Keen interest on disruptive technologies."
   thumb     : https://avatars2.githubusercontent.com/u/3193073?v=3&s=460
   email     : zubair1024@gmail.com
   url       : http://nandomoreira.me
