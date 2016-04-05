@@ -5,9 +5,91 @@
     <description>A blog by Zubair Ahmed</description>
     <link>http://github.com/zubair1024/</link>
     <atom:link href="http://github.com/zubair1024/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Tue, 05 Apr 2016 22:27:11 +0400</pubDate>
-    <lastBuildDate>Tue, 05 Apr 2016 22:27:11 +0400</lastBuildDate>
+    <pubDate>Tue, 05 Apr 2016 23:17:14 +0400</pubDate>
+    <lastBuildDate>Tue, 05 Apr 2016 23:17:14 +0400</lastBuildDate>
     <generator>Jekyll v3.1.2</generator>
+    
+      <item>
+        <title>Sticky Footers</title>
+        <description>&lt;p&gt;When a footer is placed at the end of the body, we usually tend to have an issue with it when there isn’t much content in the body. This leave room for alot of whitepace below the footer.
+The quickest way to resolve this issue is through the use of flexbox, which is an advanced CSS3 tool for building adaptive layouts.&lt;/p&gt;
+
+&lt;p&gt;Let’s create a simple layout:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;body&amp;gt;&lt;/span&gt;
+        &lt;span class=&quot;nt&quot;&gt;&amp;lt;header&amp;gt;&lt;/span&gt;Hello World&lt;span class=&quot;nt&quot;&gt;&amp;lt;/header&amp;gt;&lt;/span&gt;
+        &lt;span class=&quot;nt&quot;&gt;&amp;lt;section&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;main-content&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;The quick brown fox jumps over the lazy dog&lt;span class=&quot;nt&quot;&gt;&amp;lt;/section&amp;gt;&lt;/span&gt;
+        &lt;span class=&quot;nt&quot;&gt;&amp;lt;footer&amp;gt;&lt;/span&gt;Bye World&lt;span class=&quot;nt&quot;&gt;&amp;lt;/footer&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;/body&amp;gt;&lt;/span&gt;
+
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;To enable flex mode we add “display:flex” to the body and the flex direction as columns for horizontal layout.&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;
+    &lt;span class=&quot;nt&quot;&gt;html&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;nl&quot;&gt;height&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;100%&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+    &lt;span class=&quot;nt&quot;&gt;body&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;nl&quot;&gt;display&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;flex&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+        &lt;span class=&quot;nl&quot;&gt;flex-direction&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;column&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+        &lt;span class=&quot;nl&quot;&gt;height&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;100%&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Now, the next step is to adjust how much space each section/part will take. This is done through flex properties:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;
+    &lt;span class=&quot;nt&quot;&gt;flex-grow&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;flex-shrink&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;flex-basis&lt;/span&gt;
+
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;The “flex-grow” property defines how much of the available free space in the container goes to an element. Then “flex-shrink” property decides on how much an element will shrink when there isn’t enough space for everything. Finally, the “flex-basis” property sets the default size of an element.&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;
+    &lt;span class=&quot;nt&quot;&gt;header&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+       &lt;span class=&quot;c&quot;&gt;/* We want the header to have a static height,
+       it will always take up just as much space as it needs.  */&lt;/span&gt;
+       &lt;span class=&quot;c&quot;&gt;/* 0 flex-grow, 0 flex-shrink, auto flex-basis */&lt;/span&gt;
+       &lt;span class=&quot;nl&quot;&gt;flex&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;0&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;0&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;auto&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+    &lt;span class=&quot;nc&quot;&gt;.main-content&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+       &lt;span class=&quot;c&quot;&gt;/* By setting flex-grow to 1, the main content will take up
+       all of the remaining space on the page.
+       The other elements have flex-grow: 0 and won&#39;t contest the free space. */&lt;/span&gt;
+       &lt;span class=&quot;c&quot;&gt;/* 1 flex-grow, 0 flex-shrink, auto flex-basis */&lt;/span&gt;
+       &lt;span class=&quot;nl&quot;&gt;flex&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;1&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;0&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;auto&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+    &lt;span class=&quot;nt&quot;&gt;footer&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+       &lt;span class=&quot;c&quot;&gt;/* Like the header, the footer will have a static height - it shouldn&#39;t grow or shrink.  */&lt;/span&gt;
+       &lt;span class=&quot;c&quot;&gt;/* 0 flex-grow, 0 flex-shrink, auto flex-basis */&lt;/span&gt;
+       &lt;span class=&quot;nl&quot;&gt;flex&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;0&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;0&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;auto&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;I believe that is quite straight forward way of implementing sticky footer using CSS3.&lt;/p&gt;
+
+</description>
+        <pubDate>Sat, 05 Mar 2016 17:46:52 +0400</pubDate>
+        <link>http://github.com/zubair1024/blog/2016/Sticky-Footer/</link>
+        <guid isPermaLink="true">http://github.com/zubair1024/blog/2016/Sticky-Footer/</guid>
+        
+        
+        <category>sticky,footer,css3,flex,tips</category>
+        
+      </item>
     
       <item>
         <title>Quickie On ES6</title>
@@ -1390,99 +1472,6 @@ relief, mischief, piety, believe&lt;/p&gt;
         <pubDate>Fri, 20 Nov 2015 17:46:52 +0400</pubDate>
         <link>http://github.com/zubair1024/blog/2015/Proof-Reading-Tricks/</link>
         <guid isPermaLink="true">http://github.com/zubair1024/blog/2015/Proof-Reading-Tricks/</guid>
-        
-        
-        <category>numeronyms,</category>
-        
-        <category>tips</category>
-        
-      </item>
-    
-      <item>
-        <title>CSS Longhand and CSS Shorthand</title>
-        <description>&lt;p&gt;CSS Longhand and CSS Shorthand. Have you been confused about which method to choose when writing a piece of CSS code. I present you with a quick walk-through in this post which will equip you henceforth to make better decisions on the methodology, however, always remember that one is concise and the other one is precise.&lt;/p&gt;
-
-&lt;h3 id=&quot;shorthand&quot;&gt;Shorthand?&lt;/h3&gt;
-
-&lt;p&gt;Shorthand property is a property that takes the values for other sets of CSS properties. Basically,&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;
-    &lt;span class=&quot;nt&quot;&gt;border&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;1px&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;solid&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;blue&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
-
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;p&gt;is the same as&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;
-    &lt;span class=&quot;nt&quot;&gt;border-width&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;1px&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
-    &lt;span class=&quot;nt&quot;&gt;border-style&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;solid&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
-    &lt;span class=&quot;nt&quot;&gt;border-color&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;blue&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
-
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;p&gt;Through this methodology we do not have to declare individual properties separately. This will save us from redundant and time/space consuming code.&lt;/p&gt;
-
-&lt;p&gt;In certain situations such as when it comes to padding and margin, always remember that the order matters.&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;
-    &lt;span class=&quot;nt&quot;&gt;padding&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;1px&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;1px&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;1px&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;1px&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
-
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;p&gt;is the same as&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;
-    &lt;span class=&quot;nt&quot;&gt;padding-top&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;1px&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
-    &lt;span class=&quot;nt&quot;&gt;padding-right&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;1px&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
-    &lt;span class=&quot;nt&quot;&gt;padding-bottom&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;1px&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
-    &lt;span class=&quot;nt&quot;&gt;padding-left&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;1px&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
-
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;p&gt;When in doubt always remember CLOCKWISE!&lt;/p&gt;
-
-&lt;p&gt;Now, let us see what happens when a property is left out of the declaration.&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;
-    &lt;span class=&quot;nt&quot;&gt;border&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;1px&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;blue&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
-
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;p&gt;In the above code we won’t be able to see the border anymore, which is because the border-style property was left out, for which it got the default value of none. Basically it got a property of&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;
-    &lt;span class=&quot;nt&quot;&gt;border&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;1px&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;none&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;blue&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
-
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;p&gt;This concludes it for us that when a property value is left out in a shorthand declaration, that property takes on its default value (even if it has to override any previous value assigned for the same).&lt;/p&gt;
-
-&lt;p&gt;On an important note, we cannot use values like inherit, initial or unset, which are available for all the CSS properties, in shorthand notation.&lt;/p&gt;
-
-&lt;h3 id=&quot;longhand&quot;&gt;Longhand?&lt;/h3&gt;
-
-&lt;p&gt;Yes, it is true that shorthand alternatives are handy. But, in certain rare situations they are of a disadvantage.
-Take font shorthand property for example for a h4 tag.&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;
-    &lt;span class=&quot;nt&quot;&gt;font&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;20px&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;courier&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;new&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
-
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-&lt;p&gt;In the above shorthand code, no value is there for the font-weight property, hence the font-weight:bold(browser default style) will be overridden by the default value font-weight:normal causing the h4 element to lose its bold style, which may not has been intended.&lt;/p&gt;
-
-&lt;p&gt;So in these rare but important situations Longhand property are useful. Productivity aside, during development some developers/coders/programmers find longhand notations a lot easier to work with than the shorthand, mainly because in terms of readability and clarity it is indisputable.&lt;/p&gt;
-
-</description>
-        <pubDate>Fri, 20 Nov 2015 17:46:52 +0400</pubDate>
-        <link>http://github.com/zubair1024/blog/2015/CSS-Longhand-and-CSS-Shorthand/</link>
-        <guid isPermaLink="true">http://github.com/zubair1024/blog/2015/CSS-Longhand-and-CSS-Shorthand/</guid>
         
         
         <category>numeronyms,</category>
