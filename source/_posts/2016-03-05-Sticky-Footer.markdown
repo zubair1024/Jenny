@@ -6,7 +6,7 @@ comments: true
 categories: sticky,footer,css3,flex,tips
 ---
 
-When a footer is placed at the end of the body, we usually tend to have an issue with it when there isn't much content in the body. This leave room for alot of whitepace below the footer.
+When a footer is placed at the end of the body, we usually tend to have an issue with it when there isn't much content in the body. This leaves room for alot of whitepace below the footer.
 The quickest way to resolve this issue is through the use of flexbox, which is an advanced CSS3 tool for building adaptive layouts.
 
 Let's create a simple layout:
